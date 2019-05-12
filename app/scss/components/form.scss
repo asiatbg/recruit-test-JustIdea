@@ -1,0 +1,136 @@
+.contact-select--arrow-icon {
+  @include appearance();
+  background-image: url("../images/icons/arrow.svg");
+  background-position: 96% center;
+  background-repeat: no-repeat;
+}
+
+.contact {
+  z-index: 1;
+  padding-bottom: 55px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+
+  .contact-input {
+    padding: 13px;
+    margin: 7px;
+    border-radius: 5px;
+    border: 1px solid $contact-border-color;
+    width: calc(33.333% - 14px);
+    box-sizing: border-box;
+    font-family: $roboto-regular;
+    color: $contact-text-color;
+
+    @include breakpoint(md) {
+      width: calc(50% - 14px);
+    }
+
+    @include breakpoint(xs) {
+      width: 100%;
+    }
+  }
+
+  .contact-input--textarea {
+    resize: none;
+    width: 100%;
+  }
+
+  .contact-label--policy {
+    color: $link-color;
+    margin: 0 5px;
+    text-decoration: none;
+    font-family: $roboto-regular;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+  }
+
+  .contact-checkbox--wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+
+    .contact-label--checkbox {
+      margin: 32px 7px;
+      color: white;
+
+      font-family: $roboto-regular;
+      font-size: 14px;
+      line-height: 16px;
+      position: relative;
+      padding: 0 0 0 1.4rem;
+
+      cursor: pointer;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 15px;
+        height: 15px;
+        border-radius: 3px;
+        background-color: $white;
+        border: 1px solid $contact-text-color;
+      }
+
+      &:after {
+        position: absolute;
+        left: 0.35rem;
+        top: 0.05rem;
+        width: 0.3rem;
+        height: 0.7rem;
+        opacity: 0;
+        border-bottom: 2.5px solid $black;
+        border-right: 2.5px solid $black;
+        transform: rotate(45deg);
+      }
+    }
+
+    .contact-input--checkbox {
+      margin: 0 8px 0 0;
+      display: none;
+
+      &:checked {
+        background: red;
+
+        + .contact-label--checkbox {
+          &:after {
+            content: "";
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+
+  .contact-input--submit-btn {
+    border-radius: 5px;
+    width: 33.333%;
+    padding: 18px 0;
+    font-size: 14px;
+    line-height: 18px;
+    color: $white;
+    font-family: $roboto-bold;
+    text-transform: uppercase;
+    font-weight: 700;
+    border: 0;
+    background-color: $link-color;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $hover-button-color;
+    }
+
+    &:active {
+      background-color: $contact-text-color;
+    }
+  }
+}
+
+

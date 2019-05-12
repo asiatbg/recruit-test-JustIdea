@@ -1,0 +1,192 @@
+.skills-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20%;
+
+  @include breakpoint(md) {
+    position: relative;
+    margin-bottom: 10%;
+  }
+
+  .skills-carousel {
+    position: relative;
+    border: 1px solid $border-color;
+    padding: 3vw;
+    border-radius: 50%;
+
+    @include breakpoint(md) {
+      border-radius: 0;
+      border: 0;
+    }
+  }
+
+  .skills-circle--container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint(md) {
+      display: block;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  }
+
+  .skills-circle--gear {
+    background-image: url("../images/gear.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% auto;
+    object-fit: contain;
+    max-height: 470px;
+    max-width: 470px;
+    width: 40vw;
+    height: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint(md) {
+      background: 0;
+      width: auto;
+      height: auto
+    }
+
+    .skills-title {
+      color: white;
+      font-size: 14px;
+      line-height: 18px;
+      text-transform: uppercase;
+      font-family: $roboto-bold;
+
+      @include breakpoint(md) {
+        color: black;
+        margin: 5% 0;
+        font-size: 18px;
+      }
+    }
+  }
+
+  .skills-circle--list {
+    position: absolute;
+    display: block;
+
+    &:nth-child(n+2){
+      .skills-circle--link::after {
+        position: absolute;
+        content: '';
+        width: 25%;
+        height: 100%;
+        bottom: -70px;
+        left: 35px;
+        border-left: 1px solid $border-color;
+        box-sizing: border-box;
+      }
+    }
+
+    &:last-child .skills-circle--link::after {
+      border: none;
+    }
+
+
+    @include breakpoint(md) {
+      position: relative;
+    }
+
+    .skills-circle--link {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      text-decoration: none;
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 25%;
+        height: 100%;
+        bottom: -70px;
+        left: 35px;
+        border-left: 1px solid $black;
+        box-sizing: border-box;
+      }
+
+      @include breakpoint(md) {
+        flex-direction: row;
+        margin: 5% 0;
+        justify-content: flex-start;
+      }
+
+      &:hover {
+        .skills-circle--name {
+          color: $hover-color;
+        }
+      }
+
+      .skills-circle--img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        box-sizing: border-box;
+        padding: 5px;
+        width: 70px;
+        height: 70px;
+        border-radius: 40px;
+        background-color: $background-icon-color;
+        border: 3px solid $border-color;
+
+        @include breakpoint(md) {
+          position: relative;
+        }
+      }
+
+      .skills-circle--name {
+        position: absolute;
+        white-space: nowrap;
+        color: $text-color;
+
+        @include breakpoint(lg) {
+          white-space: normal;
+        }
+
+        @include breakpoint(md) {
+          position: relative;
+          padding: 0 10px
+        }
+      }
+    }
+  }
+
+
+  .right-side-circle {
+    align-self: flex-start;
+    padding-left: 55px;
+  }
+
+  .left-side-circle {
+    align-self: flex-end;
+    padding-right: 55px;
+  }
+
+  .top-side-circle {
+    bottom: 55px;
+  }
+
+  .bottom-side-circle {
+    top: 55px;
+  }
+}
+
+
+
+  
+
+
+
+
+

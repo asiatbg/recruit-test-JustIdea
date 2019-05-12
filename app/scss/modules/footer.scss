@@ -1,0 +1,40 @@
+.footer-main {
+  background-color: $background-footer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+
+  .contact-text--number {
+    font-size: 18px;
+    line-height: 24px;
+    color: $white;
+    font-family: $roboto-bold;
+    font-weight: 400;
+    text-decoration: none;
+  }
+
+  .contact-text {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 1;
+
+    .contact-text--title {
+      margin:60px 0 40px;
+      color: $white;
+    }
+    .contact-text--content {
+      margin-bottom: 50px;
+      color: $white;
+    }
+  }
+}
